@@ -1,7 +1,7 @@
 [project]
-name = "gemini-chatbot"
+name = "ai-chatbot"
 version = "0.1.0"
-description = "Add your description here"
+description = "Simple AI Chatbot interface"
 requires-python = ">=3.13"
 dependencies = [
     "flask-sqlalchemy>=3.1.1",
