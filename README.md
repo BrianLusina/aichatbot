@@ -1,6 +1,12 @@
-# Gemini ChatBot AI
+# AI ChatBot
 
-A simple chatbot application built with Flask and Google's Gemini AI SDK. This web-based chatbot provides an interactive interface to communicate with Google's Gemini AI model.
+[![Lint](https://github.com/BrianLusina/aichatbot/actions/workflows/lint.yml/badge.svg)](https://github.com/BrianLusina/aichatbot/actions/workflows/lint.yml)
+[![Build](https://github.com/BrianLusina/aichatbot/actions/workflows/build.yml/badge.svg)](https://github.com/BrianLusina/aichatbot/actions/workflows/build.yml)
+[![Release](https://github.com/BrianLusina/aichatbot/actions/workflows/release.yml/badge.svg)](https://github.com/BrianLusina/aichatbot/actions/workflows/release.yml)
+[![Code Scanning](https://github.com/BrianLusina/aichatbot/actions/workflows/codeql.yml/badge.svg)](https://github.com/BrianLusina/aichatbot/actions/workflows/codeql.yml)
+
+A simple chatbot application built with Flask and Google's Gemini AI SDK. This web-based chatbot provides an interactive
+interface to communicate with Google's Gemini AI model.
 
 ## Features
 
@@ -69,13 +75,19 @@ GEMINI_MODEL=gemini-2.0-flash-exp
 ### Using Python directly
 
 ```bash
-python app.py
+python src/main.py
 ```
 
 ### Using uv
 
 ```bash
-uv run python app.py
+uv run python src/main.py
+```
+
+### Using make
+
+```bash
+make run
 ```
 
 The application will start in debug mode and be accessible at:
@@ -87,16 +99,16 @@ http://127.0.0.1:5000
 ## Project Structure
 
 ```
-gemini-chatbot/
-├── app.py                  # Application entry point
+aichatbot/
 ├── pyproject.toml          # Project dependencies and configuration
 ├── .env                    # Environment variables (not tracked in git)
 ├── .gitignore              # Git ignore rules
-├── src/
+├── src
+├── main.py                # Application entry point
+├── app/                # Application entry point
 │   ├── __init__.py        # Flask app factory
 │   ├── routes.py          # Application routes and Gemini AI integration
 │   ├── models.py          # Database models (if used)
-│   ├── database.db        # SQLite database file
 │   ├── templates/         # HTML templates
 │   │   ├── base.html
 │   │   ├── history.html
@@ -127,7 +139,7 @@ To run the application in development mode with auto-reload:
 
 ```bash
 export FLASK_ENV=development  # On Windows: set FLASK_ENV=development
-python app.py
+python src/main.py
 ```
 
 ## Troubleshooting
@@ -146,11 +158,3 @@ If port 5000 is already in use, modify `app.py`:
 ```python
 app.run(debug=True, port=5001)  # Use a different port
 ```
-
-## License
-
-[Add your license here]
-
-## Contributing
-
-[Add contributing guidelines here]

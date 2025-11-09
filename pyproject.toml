@@ -10,3 +10,13 @@ dependencies = [
     "google-genai>=1.49.0",
     "markdown>=3.10",
 ]
+
+[dependency-groups]
+lint = [
+    "black>=25.9.0",
+    "flake8>=7.3.0",
+    "mypy>=1.18.2",
+    "pyrefly>=0.40.1",
+    "ruff>=0.14.4",
+    "ty>=0.0.1a25",
+]
