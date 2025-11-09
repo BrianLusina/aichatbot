@@ -1,0 +1,37 @@
+<!--- Task 4, 7, 8: Add your code here -->
+{% extends "base.html" %}
+{% block title %}AI Chatbot with Gemini{% endblock %}
+{% block content %}
+<div class="flex-column d-flex align-items-center justify-content-center" style="height: 350px">
+    <h1>What are you looking for?</h1>
+    <form class="form-group d-flex align-items-center w-100" method="GET" onsubmit="showSpinner()" style="max-width: 700px;">
+        <input class="form-control mr-2" type="search" name="query" placeholder="Enter Here" aria-label="Search" style="flex: 1;">
+    </form>
+</div>
+
+<div class="container">
+    <h1 class="text-center my-4">AI BOT</h1>
+    <div class="chat-history">
+        <ul class="m-b-0">
+            {% for result in results %}
+                <li class="clearfix">
+                    <div class="message {{ result.messageType }}"> {{ result.message |safe}} </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div id="loading-spinner" class="text-center my-3" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <p>Thinking...</p>
+</div>
+
+<script>
+    function showSpinner() {
+        document.getElementById("loading-spinner").style.display = "block";
+    }
+</script>
+{% endblock %}

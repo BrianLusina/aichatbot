@@ -6,4 +6,7 @@ requires-python = ">=3.13"
 dependencies = [
     "flask-sqlalchemy>=3.1.1",
     "flask>=3.1.2",
+    "dotenv>=0.9.9",
+    "google-genai>=1.49.0",
+    "markdown>=3.10",
 ]
